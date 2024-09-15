@@ -13,11 +13,18 @@
 
 
 function combine(...obj) {
-    const newObj = {}
-    for (const key in obj) {
-
-    newObj = `${key.obj}: 
-  }
+    const newObj = {}   // создаем новый объект
+    for (let i = 0; i < obj.length; i++) {
+        const element = obj[i];
+        for (const key in element) {
+            if (newObj[key]=== undefined) {
+                newObj[key] = element[key]
+            } else {
+                newObj[key] += element[key]
+            }
+        }
+        
+    }
   return newObj
   }
 
