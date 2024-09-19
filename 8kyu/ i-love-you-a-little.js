@@ -15,13 +15,16 @@
 
 // ✅ SOLUTION:
 
-function howMuchILoveYou(nbPetals) {
-const slovo = ["Я тебя люблю", "немного", "много", "страстно", "безумно", "нисколько"]
-for (let i = 0; i < slovo.length; i++) {
-   if (nbPetals > 0 && nbPetals <= 6){
-    return slovo[i
-   }
-    
-}
 
-}
+function howMuchILoveYou(nbPetals) {
+   const slovo = {
+      1: "I love you", 
+      2: "a little",
+      3: "a lot",
+      4: "passionately",
+      5: "madly",
+      0: "not at all"
+   }  
+   return slovo[nbPetals%6] 
+   }
+console.log(howMuchILoveYou(8))
