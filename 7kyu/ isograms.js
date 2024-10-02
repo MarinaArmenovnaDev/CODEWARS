@@ -8,19 +8,17 @@
 
 
 // ✅ SOLUTION:
-//РЕШИТЬ С ПОМОЩЬЮ МЕТОДОВ!!!!!
 function isIsogram(str){
-    let newStr = str.spl)
-   for (let i = 0; i < str.length; i++) {
-    newStr = str.indexOf(str[i])
-    if(newStr === -1){
-        newStr = true
-    }else{
-        newStr = false
+    const newStr = str.toLowerCase()
+    let arr = []
+   for (let i = 0; i < newStr.length; i++) {
+    const char = newStr[i]
+    if(arr.includes(char)){
+       return false
     }
-    
-   }
-   retu
-  }
+    arr.push(char)  
+    } 
+    return true 
+    }
+   
 
-  console.log(isIsogram("Dermatoglyphics".toLocaleLowerCase()));
