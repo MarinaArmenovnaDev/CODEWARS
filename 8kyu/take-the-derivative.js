@@ -17,7 +17,7 @@
 // ✅ SOLUTION:
 function derive(coefficient,exponent) {
   let p = coefficient * exponent
-  let s = [exponent].map(i => i-1)
+  let s = exponent - 1
   return `${p}x^${s}`
 }
 
