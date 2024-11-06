@@ -26,17 +26,27 @@
 
 // ✅ SOLUTION:
 
-function declareWinner(fighter1, fighter2, firstAttacker) {
-    if (fighter1.damagePerAttack < fighter2.damagePerAttack) {
-        
-        return `${fighter2.name} attacks ${fighter1.name}:   
-        
-    }
-  }
-
 function Fighter(name, health, damagePerAttack) {
-        this.name = name;
-        this.health = health;
-        this.damagePerAttack = damagePerAttack;
-        this.toString = function() { return this.name; }
+  this.name = name;
+  this.health = health;
+  this.damagePerAttack = damagePerAttack;
+  this.toString = function() { return this.name; }
 }
+
+function declareWinner(fighter1, fighter2, firstAttacker) {
+  let attacker = firstAttacker === fighter1.name ? fighter1 : fighter2;
+  let defender = firstAttacker === fighter1.name ? fighter2 : fighter1;
+
+  while (fighter1.health > 0 && fighter2.health > 0) {
+      defender.health -= attacker.damagePerAttack;
+      if (defender.health <= 0) {
+          return attacker.name;
+      }
+      // Меняем местами атакующего и защищающегося
+      [attacker, defender] = [defender, attacker];
+  }
+}
+
+let fighter1 = new Fighter("Lew", 10, 2);
+let fighter2 = new Fighter("Harry", 5, 4);
+console.log(declareWinner(fighter1, fighter2, "Lew")); // Вывод: "Lew"
