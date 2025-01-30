@@ -3,13 +3,10 @@
 //✅ SOLUTION:
 
 
+
 function oddCount(n){
-    let count = 0
- for (let i = 1 ; i < n; i++) {
-    if(i % 2 === 1) {
-        count++
-    } 
- }
- return count
+    if(n <= 0 ) return 0
+    return Math.floor(n/2)
 }
+
 console.log(oddCount(7));
